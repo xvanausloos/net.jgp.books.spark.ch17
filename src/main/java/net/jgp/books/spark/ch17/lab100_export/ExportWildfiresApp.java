@@ -157,9 +157,8 @@ public class ExportWildfiresApp {
   private boolean downloadWildfiresDatafiles() {
     log.trace("-> downloadWildfiresDatafiles()");
     // Download the MODIS data file
-    String fromFile =
-        "https://firms.modaps.eosdis.nasa.gov/data/active_fire/c6/csv/"
-            + K.MODIS_FILE;
+    //String fromFile = "https://firms.modaps.eosdis.nasa.gov/data/active_fire/c6/csv/"    + K.MODIS_FILE;
+    String fromFile = "https://firms.modaps.eosdis.nasa.gov/data/active_fire/modis-c6.1/csv/MODIS_C6_1_Canada_24h.csv";
     String toFile = K.TMP_STORAGE + "/" + K.MODIS_FILE;
 
     if (!download(fromFile, toFile)) {
@@ -167,9 +166,11 @@ public class ExportWildfiresApp {
     }
 
     // Download the VIIRS data file
-    fromFile =
-        "https://firms.modaps.eosdis.nasa.gov/data/active_fire/viirs/csv/"
-            + K.VIIRS_FILE;
+//    fromFile =
+//        "https://firms.modaps.eosdis.nasa.gov/data/active_fire/viirs/csv/"
+//            + K.VIIRS_FILE;
+      fromFile = "https://firms.modaps.eosdis.nasa.gov/data/active_fire/suomi-npp-viirs-c2/csv/SUOMI_VIIRS_C2_Canada_24h.csv";
+
     toFile = K.TMP_STORAGE + "/" + K.VIIRS_FILE;
     if (!download(fromFile, toFile)) {
       return false;
